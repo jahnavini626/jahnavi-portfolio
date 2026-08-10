@@ -40,7 +40,6 @@
 
   a{ color:inherit; text-decoration:none; }
 
-  /* ---------- custom cursor ---------- */
   #cursor-dot, #cursor-ring{
     position:fixed; top:0; left:0; pointer-events:none; z-index:9999;
     border-radius:50%;
@@ -70,7 +69,6 @@
     body{ cursor:auto; }
   }
 
-  /* ---------- layout helpers ---------- */
   .wrap{ max-width:1120px; margin:0 auto; padding:0 32px; }
   section{ position:relative; padding:120px 0; }
   .eyebrow{
@@ -81,7 +79,6 @@
   .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
   .reveal.in{ opacity:1; transform:translateY(0); }
 
-  /* flip-in on scroll — used for the photo and the about copy */
   .flip-reveal{
     opacity:0; transform-style:preserve-3d; perspective:1200px;
     transform:perspective(1200px) rotateY(-90deg);
@@ -89,7 +86,6 @@
   }
   .flip-reveal.in{ opacity:1; transform:perspective(1200px) rotateY(0deg); }
 
-  /* ambient animated background blobs, visible behind every section */
   .ambient{ position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; }
   .ambient span{
     position:absolute; border-radius:50%; filter:blur(90px); opacity:.28;
@@ -105,7 +101,6 @@
     66%{ transform:translate(-30px,25px) scale(.9); }
   }
 
-  /* ---------- nav ---------- */
   nav{
     position:fixed; top:0; left:0; right:0; z-index:500;
     display:flex; align-items:center; justify-content:space-between;
@@ -120,7 +115,6 @@
   .nav-links{ display:flex; }
   @media (max-width:720px){ .nav-links{ display:none; } }
 
-  /* ---------- hero ---------- */
   #hero{ min-height:100vh; display:flex; align-items:center; padding-top:80px; }
   #network{ position:fixed; inset:0; z-index:-1; opacity:.55; pointer-events:none; }
   .hero-grid{ position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; text-align:center; width:100%; max-width:100%; }
@@ -161,12 +155,10 @@
   .photo-tag .pulse{ width:7px; height:7px; border-radius:50%; background:var(--mint); box-shadow:0 0 0 0 rgba(79,209,192,.7); animation:pulse 2s infinite; }
   @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(79,209,192,.55);} 70%{box-shadow:0 0 0 10px rgba(79,209,192,0);} 100%{box-shadow:0 0 0 0 rgba(79,209,192,0);} }
 
-  /* ---------- section heading ---------- */
   .sec-head{ display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:52px; flex-wrap:wrap; gap:16px; }
   .sec-head h2{ font-size:clamp(28px,3.6vw,42px); font-weight:600; }
   .sec-head .count{ font-family:'JetBrains Mono',monospace; color:var(--muted); font-size:13px; }
 
-  /* ---------- about ---------- */
   #about .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:60px; }
   @media (max-width:800px){ #about .about-grid{ grid-template-columns:1fr; } }
   #about p{ color:var(--muted); font-size:16.5px; line-height:1.85; }
@@ -176,7 +168,6 @@
   .stat .num{ font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--mint); }
   .stat .lbl{ font-size:12px; color:var(--muted); margin-top:6px; }
 
-  /* ---------- skills ---------- */
   .skill-cols{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
   @media (max-width:860px){ .skill-cols{ grid-template-columns:1fr; } }
   .skill-block{ border:1px solid var(--line); border-radius:var(--radius); padding:26px; background:var(--surface); }
@@ -192,7 +183,6 @@
   .skill-block.primary{ border-color:var(--violet); box-shadow:0 0 0 1px var(--violet-dim) inset; }
   .skill-block.primary h3{ color:var(--mint); }
 
-  /* ---------- experience ---------- */
   .timeline{ position:relative; padding-left:32px; }
   .timeline::before{ content:''; position:absolute; left:6px; top:6px; bottom:6px; width:1px; background:var(--line); }
   .tl-item{ position:relative; padding-bottom:52px; }
@@ -208,7 +198,6 @@
   .tl-item ul li{ font-size:14.5px; color:var(--muted); padding-left:18px; position:relative; line-height:1.6; }
   .tl-item ul li::before{ content:'—'; position:absolute; left:0; color:var(--violet); }
 
-  /* ---------- projects ---------- */
   .proj-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
   @media (max-width:900px){ .proj-grid{ grid-template-columns:1fr; } }
   .proj-card{
@@ -224,7 +213,6 @@
   .proj-link{ font-size:13px; color:var(--mint); display:inline-flex; align-items:center; gap:6px; margin-top:auto; }
   .proj-link svg{ width:12px; height:12px; }
 
-  /* ---------- certs ---------- */
   .cert-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
   @media (max-width:700px){ .cert-row{ grid-template-columns:1fr; } }
   .cert-card{ border:1px solid var(--line); border-radius:var(--radius); padding:22px; display:flex; gap:16px; align-items:flex-start; background:var(--surface); }
@@ -232,7 +220,6 @@
   .cert-card h4{ font-size:15px; margin-bottom:4px; }
   .cert-card .yr{ font-size:12.5px; color:var(--muted); }
 
-  /* ---------- contact / footer ---------- */
   #contact{ text-align:center; }
   #contact h2{ font-size:clamp(32px,5vw,58px); margin-bottom:20px; }
   #contact p{ color:var(--muted); max-width:480px; margin:0 auto 36px; line-height:1.7; }
@@ -253,8 +240,8 @@
   <ul class="nav-links">
     <li><a href="#about" data-cursor="View">About</a></li>
     <li><a href="#skills" data-cursor="View">Skills</a></li>
-    <li><a href="#experience" data-cursor="View">Experience</a></li>
     <li><a href="#projects" data-cursor="View">Projects</a></li>
+    <li><a href="#experience" data-cursor="View">Experience</a></li>
     <li><a href="#contact" data-cursor="Go">Contact</a></li>
   </ul>
 </nav>
@@ -339,47 +326,6 @@
   </div>
 </section>
 
-<section id="experience">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><div class="eyebrow">experience</div><h2>Where I've worked</h2></div>
-      <div class="count mono">2023–2026</div>
-    </div>
-    <div class="timeline">
-      <div class="tl-item reveal">
-        <span class="tl-date">JULY 2026 — PRESENT</span>
-        <h3>AI/ML Intern</h3>
-        <div class="org">Edutantr</div>
-        <ul>
-          <li>Working on AI/ML concepts including LLMs, RAG, AI agents, and MCP as part of the internship curriculum</li>
-          <li>Applying data analysis and visualization techniques using Pandas, NumPy, and Matplotlib in project work</li>
-        </ul>
-      </div>
-      <div class="tl-item reveal">
-        <span class="tl-date">FEB 2026 — MAR 2026</span>
-        <h3>Data Analytics Intern</h3>
-        <div class="org">CODTECH IT Solutions</div>
-        <ul>
-          <li>Processed and analyzed large datasets to extract actionable insights</li>
-          <li>Built and evaluated a machine learning model, covering preprocessing, training and evaluation</li>
-          <li>Developed an interactive Power BI dashboard to visualize data insights</li>
-          <li>Conducted NLP-based sentiment analysis on textual data to classify and interpret opinions</li>
-        </ul>
-      </div>
-      <div class="tl-item reveal">
-        <span class="tl-date">2025 — 2026</span>
-        <h3>Cyber Security Intern</h3>
-        <div class="org">IBM</div>
-        <ul>
-          <li>Conducted vulnerability assessments on web applications, identifying issues such as SQL injection, XSS, and authentication flaws</li>
-          <li>Analysed security findings and documented reports with risk ratings and remediation recommendations</li>
-          <li>Learned web application security and bug bounty methodologies</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="projects">
   <div class="wrap">
     <div class="sec-head">
@@ -420,6 +366,47 @@
         <p>Interactive Power BI dashboard visualizing content trends, user preferences and KPIs, with dynamic filters for data-driven decision-making.</p>
         <div class="proj-tags"><span>Power BI</span><span>Data Viz</span><span>Analytics</span></div>
         <a class="proj-link" href="#" data-cursor="View">Power BI project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="eyebrow">experience</div><h2>Where I've worked</h2></div>
+      <div class="count mono">2023–2026</div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <span class="tl-date">JULY 2026 — PRESENT</span>
+        <h3>AI/ML Intern</h3>
+        <div class="org">Edutantr</div>
+        <ul>
+          <li>Working on AI/ML concepts including LLMs, RAG, AI agents, and MCP as part of the internship curriculum</li>
+          <li>Applying data analysis and visualization techniques using Pandas, NumPy, and Matplotlib in project work</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-date">FEB 2026 — MAR 2026</span>
+        <h3>Data Analytics Intern</h3>
+        <div class="org">CODTECH IT Solutions</div>
+        <ul>
+          <li>Processed and analyzed large datasets to extract actionable insights</li>
+          <li>Built and evaluated a machine learning model, covering preprocessing, training and evaluation</li>
+          <li>Developed an interactive Power BI dashboard to visualize data insights</li>
+          <li>Conducted NLP-based sentiment analysis on textual data to classify and interpret opinions</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-date">2025 — 2026</span>
+        <h3>Cyber Security Intern</h3>
+        <div class="org">IBM</div>
+        <ul>
+          <li>Conducted vulnerability assessments on web applications, identifying issues such as SQL injection, XSS, and authentication flaws</li>
+          <li>Analysed security findings and documented reports with risk ratings and remediation recommendations</li>
+          <li>Learned web application security and bug bounty methodologies</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -482,7 +469,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
 <script>
-  // ---------- custom cursor ----------
   const dot = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
   const label = document.getElementById('cursor-label');
@@ -508,13 +494,11 @@
     });
   });
 
-  // ---------- reveal on scroll ----------
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
   }, {threshold:0.15});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // ---------- flip on scroll (photo + about copy) — replays each time it re-enters view ----------
   const flipIO = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       e.target.classList.toggle('in', e.isIntersecting);
@@ -522,7 +506,6 @@
   }, {threshold:0.2});
   document.querySelectorAll('.flip-reveal').forEach(el=>flipIO.observe(el));
 
-  // ---------- site-wide network background ----------
   const canvas = document.getElementById('network');
   const ctx = canvas.getContext('2d');
   let W,H, nodes=[];
